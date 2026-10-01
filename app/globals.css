@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-paper font-sans text-violet antialiased; font-variant-numeric: lining-nums tabular-nums; }
+  a { @apply text-violet no-underline; }
+  a:hover { @apply text-deep; }
+  ::selection { @apply bg-violet text-paper; }
+  section[id] { scroll-margin-top: 76px; }
+}
+
+@layer components {
+  .wrap { padding-inline: clamp(20px, 5vw, 72px); }
+  .sec { padding-block: clamp(56px, 8vw, 120px); }
+  .eyebrow { @apply text-[11px] uppercase tracking-[.34em]; }
+  .h2 { @apply m-0 font-serif font-light; font-size: clamp(36px, 4.6vw, 72px); line-height: 1.02; }
+  .btn { @apply inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-full border border-transparent px-8 py-4 font-sans text-xs uppercase tracking-[.2em] transition-colors; }
+  .btn-gold { @apply btn bg-gold text-deep hover:bg-paper hover:text-deep; }
+  .btn-dark { @apply btn bg-violet text-paper hover:bg-deep hover:text-paper; }
+  .btn-line-light { @apply btn border-paper/60 bg-transparent text-paper hover:bg-paper/10 hover:text-paper; }
+  .btn-line-dark { @apply btn border-violet/35 bg-transparent text-violet hover:border-violet; }
+  .diamond { @apply block h-[7px] w-[7px] rotate-45 bg-gold; }
+}
